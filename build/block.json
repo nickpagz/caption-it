@@ -1,0 +1,54 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "create-block/caption-it",
+	"version": "0.1.0",
+	"title": "Caption It",
+	"category": "common",
+	"icon": "smiley",
+	"description": "Caption any image with your own text.",
+	"supports": {
+		"html": false
+	},
+	"attributes": {
+		"message": {
+			"type": "string",
+			"source": "text",
+			"selector": "div",
+			"default": ""
+		},
+		"bg_color": {
+			"type": "string",
+			"default": "#000000"
+		},
+		"text_color": {
+			"type": "string",
+			"default": "#ffffff"
+		},
+		"alignment": {
+            "type": "string",
+            "default": "none"
+        }
+	},
+	"example": {
+		"attributes": {
+			"message": "Meow!",
+			"bg_color": "#CFE8F1",
+			"text_color": "#FFF",
+			"alignment": "center"
+		},
+		"innerBlocks": [
+			{
+				"name": "core/image",
+				"attributes": {
+					"url": "https://pd.w.org/2021/12/36361c197c89c98c5.55737158.jpg",
+					"alt": "text"
+				}
+			}
+		]
+	},
+	"textdomain": "caption-it",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}
